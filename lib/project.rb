@@ -3,6 +3,11 @@ class Project
 attr_accessor :title
     def initialize(title)
         @title=title
+        
+    end
+
+    def self.all
+        @@all
     end
 
 def add_backer(backer)
@@ -10,11 +15,17 @@ def add_backer(backer)
 end
 
 def backers
-    a=ProjectBacker.all
-    b=a.select do |project|
-        project.project == self
+        
+
+    a=ProjectBacker.all.select do |project_backer|
+        project_backer.project == self
+        
     end
-    b
+# binding.pry
+    a.map do |project|
+        project.backer
+    end
+      
 end
 
 end
