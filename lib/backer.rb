@@ -11,13 +11,11 @@ attr_reader :name
     end
 
     def backed_projects
-         binding.pry
+        # binding.pry
 
-       a= ProjectBacker.all
-       b=select do |project|
+        ProjectBacker.all.select do |project|
             project.backer == self
         end
-        b
     end
         
 
