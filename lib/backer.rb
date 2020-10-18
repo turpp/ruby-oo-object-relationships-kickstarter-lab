@@ -15,6 +15,7 @@ attr_reader :name
 
         ProjectBacker.all.select do |project|
             project.backer == self
+            
         end
     end
         
